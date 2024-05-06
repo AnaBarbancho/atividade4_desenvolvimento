@@ -1,10 +1,12 @@
-import { Provider } from "./contexts";
-import Principal from "./pages/Principal";
+
+import { RandomProvider } from "./contexts/RandomContext";
+import Main from "./pages/Main";
+
 
 export default function App() {
   return (
-    <Provider>
-      <Principal />
-    </Provider>
+    <RandomProvider>
+      <Main />
+    </RandomProvider>
   );
 }

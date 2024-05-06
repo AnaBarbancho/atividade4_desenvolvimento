@@ -1,35 +1,26 @@
-export interface LoteriaProps {
-    megasena: Props;
-    quina: Props;
-    timemania: Props;
+import { ReactNode } from "react";
+
+export interface ThemeProps {
+    name: string;
+    bgMain: string;
+    button: {
+        bg: string;
+        text: string;
+        bgHover: string;
+    }
+}
+export interface RandomContextProps {
+    theme: ThemeProps;
+    toggleTheme: () => void;
+    randomize:() => void;
+    numbers:string[];
+    increment:(value:number) => void ;
 }
 
-export interface Props {
-    acumulado: boolean;
-    concursoEspecial: boolean;
-    dataApuracao: string;
-    dataPorExtenso: string;
-    dataProximoConcurso: string;
-    dezenas: string[];
-    numeroDoConcurso: number;
-    quantidadeGanhadores: number;
-    tipoPublicacao: number;
-    tipoJogo: string;
-    valorEstimadoProximoConcurso: number;
-    valorPremio: number;
-  }
-export interface Props{
-    timeDoCoracao:string,
-    acumulado: boolean,
-    concursoEspecial: boolean,
-    dataApuracao: string,
-    dataPorExtenso: string,
-    dataProximoConcurso: string,
-    dezenas: string[]
-    numeroDoConcurso: number,
-    quantidadeGanhadores: number,
-    tipoPublicacao: number,
-    tipoJogo: string,
-    valorEstimadoProximoConcurso: number,
-    valorPremio: number
+export interface ButtonProps{
+    children: ReactNode;
+    action:()=>void;
+}
+export interface MenuProps{
+    children:ReactNode;
 }

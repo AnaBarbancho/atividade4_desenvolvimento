@@ -1,3 +1,6 @@
-import useLoteria from "./useLoteria";
+import { useContext } from "react";
+import { RandomContext } from "../contexts/RandomContext";
 
-export { useLoteria };
+export default function useRandom(){
+    return useContext(RandomContext);
+}
