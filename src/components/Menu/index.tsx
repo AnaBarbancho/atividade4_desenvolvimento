@@ -12,5 +12,5 @@ export default function Menu({children}:MenuProps) {
 const Sld = styled.div`
     display:flex;
     flex-direction:row;
-    justify-content:flex-end
+    justify-content:flex-end;
 `;

@@ -13,7 +13,7 @@ export interface RandomContextProps {
     theme: ThemeProps;
     toggleTheme: () => void;
     randomize:() => void;
-    numbers:string[];
+    numbers:any[];
     increment:(value:number) => void ;
 }
 

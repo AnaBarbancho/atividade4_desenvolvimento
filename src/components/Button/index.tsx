@@ -6,7 +6,7 @@ export default function Button({children,action}:ButtonProps){
 }
 export const ButtonSld = styled.button`
     display:flex;
-    padding:10px 28px;
+    padding:10px 20px;
     border:none;
     color:${({theme}) => theme.button.text};
     margin-left:5px;

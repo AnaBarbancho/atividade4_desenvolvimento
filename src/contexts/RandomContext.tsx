@@ -1,10 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { MenuProps, RandomContextProps } from "../types";
+import { RandomContextProps } from "../types";
 import { darkTheme, lightTheme } from "../styles/theme";
 
 export const RandomContext = createContext({} as RandomContextProps);
 
-export function RandomProvider({ children }:MenuProps) {
+export function RandomProvider({ children }:any) {
     const [theme, setTheme] = useState(lightTheme);
     const [numbers, setNumbers] = useState<string[]>([]);
 
@@ -49,11 +49,12 @@ export function RandomProvider({ children }:MenuProps) {
         for (let i = 0; i < temp.length; i++) {
             temp[i] = temp[i] < 10 ? "0" + temp[i] : temp[i].toString();
         }
-
-        return (
-            <RandomContext.Provider value={{ numbers, theme, toggleTheme, randomize, increment }}>
-                {children}
-            </RandomContext.Provider>
-        );
+        setNumbers(temp);
     }
+    return (
+        <RandomContext.Provider value={{ numbers, theme, toggleTheme, randomize, increment }}>
+            {children}
+        </RandomContext.Provider>
+    );
 }
+
